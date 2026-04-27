@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Coach – Programa de Emagrecimento Feminino</title>
+  <meta name="description" content="Método exclusivo para mulheres que já tentaram de tudo e ainda sofrem com o efeito sanfona. Resultados reais em 12 semanas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── VARIABLES ─── */
+    :root {
+      --green: #2ecc71;
+      --green-dark: #1a9e52;
+      --green-deep: #0f6b38;
+      --green-light: #e8f9f0;
+      --orange: #ff6b35;
+      --orange-dark: #e55a25;
+      --black: #0f0f0f;
+      --gray: #555;
+      --light: #f8fdf9;
+      --white: #ffffff;
+    }
+
+    /* ─── UTILITY ─── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section-sm { padding: 56px 0; }
+
+    .tag {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; line-height: 1.15; }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 18px 40px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(255, 107, 53, 0.45);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(255, 107, 53, 0.55);
+    }
+    .btn-cta-green {
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      box-shadow: 0 8px 30px rgba(46, 204, 113, 0.4);
+    }
+    .btn-cta-green:hover {
+      box-shadow: 0 14px 40px rgba(46, 204, 113, 0.5);
+    }
+    .btn-ghost {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 12px;
+      display: block;
+      text-align: center;
+    }
+
+    .text-green { color: var(--green-dark); }
+    .text-orange { color: var(--orange); }
+    .highlight { color: var(--green); }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    #hero .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: #060e06;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #hero .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: right center;
+      display: block;
+    }
+    #hero .hero-bg img.hero-bg-img-mobile { display: none; }
+    #hero .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(0,0,0,1.0)  0%,
+        rgba(0,0,0,0.98) 22%,
+        rgba(0,0,0,0.90) 40%,
+        rgba(0,0,0,0.40) 58%,
+        transparent 72%
+      );
+      z-index: 1;
+    }
+    #hero .hero-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    #hero .hero-content {
+      max-width: 600px;
+      padding: 48px 0;
+    }
+    #hero .hero-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    #hero .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 30px; height: 2px;
+      background: var(--green);
+    }
+    #hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.08;
+    }
+    #hero h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+    #hero .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+    #hero .hero-sub strong { color: #fff; font-weight: 600; }
+    #hero .hero-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 0;
+    }
+    #hero .hero-cta-wrap .btn-cta { font-size: 1.05rem; }
+    #hero .hero-cta-wrap .ghost-note {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.2px;
+    }
+    #hero .hero-cta-wrap .ghost-note i {
+      color: var(--green);
+      font-size: 0.85rem;
+    }
+    #hero .social-proof {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    #hero .social-proof .sp-item {
+      display: flex;
+      flex-direction: column;
+    }
+    #hero .social-proof .sp-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+    }
+    #hero .social-proof .sp-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.3;
+      margin-top: 3px;
+    }
+    #hero .social-proof .sp-divider {
+      width: 1px;
+      background: rgba(255,255,255,0.15);
+      align-self: stretch;
+    }
+
+    /* ─── TRUST BAR — MARQUEE ─── */
+    #trustbar {
+      background: linear-gradient(90deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+      border-top: 1px solid rgba(46,204,113,0.15);
+      border-bottom: 1px solid rgba(46,204,113,0.15);
+    }
+    #trustbar::before,
+    #trustbar::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    #trustbar::before {
+      left: 0;
+      background: linear-gradient(to right, #0a0a0a, transparent);
+    }
+    #trustbar::after {
+      right: 0;
+      background: linear-gradient(to left, #0a0a0a, transparent);
+    }
+    #trustbar .marquee-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+      padding: 16px 0;
+    }
+    #trustbar .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    #trustbar .tb-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.82rem;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 0 36px;
+    }
+    #trustbar .tb-item i { color: var(--green); font-size: 1rem; }
+    #trustbar .tb-sep {
+      color: rgba(46,204,113,0.4);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    /* ─── QUEBRA DE CRENÇA ─── */
+    #crenca {
+      background: var(--light);
+    }
+    #crenca .crenca-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    #crenca .crenca-text h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 900;
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+    #crenca .crenca-text p {
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    #crenca .crenca-myths {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    #crenca .myth-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--green);
+      transition: transform 0.2s;
+    }
+    #crenca .myth-item:hover { transform: translateX(4px); }
+    #crenca .myth-icon {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--green-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    #crenca .myth-icon i { color: var(--green-dark); font-size: 0.95rem; }
+    #crenca .myth-text h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    #crenca .myth-text p { font-size: 0.82rem; color: var(--gray); line-height: 1.5; }
+
+    /* ─── DOR REAL / IDENTIFICAÇÃO ─── */
+    #dor {
+      background: var(--black);
+      color: #fff;
+    }
+    #dor .dor-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    #dor .dor-header h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    #dor .dor-header p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+    #dor .dor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    #dor .dor-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    #dor .dor-card:hover {
+      background: rgba(46,204,113,0.08);
+      border-color: rgba(46,204,113,0.3);
+    }
+    #dor .dor-card .dor-emoji {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+    #dor .dor-card h3 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    #dor .dor-card p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.55;
+    }
+    #dor .dor-bottom {
+      text-align: center;
+      margin-top: 48px;
+    }
+    #dor .dor-bottom p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 28px;
+    }
+
+    /* ─── MECANISMO / 3 PILARES ─── */
+    #pilares {
+      background: #fff;
+    }
+    #pilares .pilares-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    #pilares .pilares-header h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+    #pilares .pilares-header p {
+      color: var(--gray);
+      font-size: 1rem;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+    #pilares .pilares-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    #pilares .pilar-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    #pilares .pilar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(46,204,113,0.2);
+    }
+    #pilares .pilar-top {
+      background: linear-gradient(135deg, var(--green-deep), var(--green-dark));
+      padding: 36px 28px 28px;
+      position: relative;
+    }
+    #pilares .pilar-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.1);
+      position: absolute;
+      top: 10px; right: 16px;
+      line-height: 1;
+    }
+    #pilares .pilar-icon {
+      width: 56px; height: 56px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    #pilares .pilar-icon i { color: #fff; font-size: 1.4rem; }
+    #pilares .pilar-top h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+    }
+    #pilares .pilar-body {
+      background: #fff;
+      padding: 24px 28px;
+    }
+    #pilares .pilar-body p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    #pilares .pilar-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    #pilares .pilar-items li {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.85rem;
+      color: #333;
+    }
+    #pilares .pilar-items li i { color: var(--green); font-size: 0.8rem; flex-shrink: 0; }
+
+    /* ─── AUTORIDADE ─── */
+    #autoridade {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-dark) 100%);
+      color: #fff;
+    }
+    #autoridade .auth-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 56px;
+      align-items: center;
+    }
+    #autoridade .auth-photo {
+      position: relative;
+    }
+    #autoridade .auth-photo img {
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    #autoridade .auth-badge {
+      position: absolute;
+      bottom: -16px; right: -16px;
+      background: var(--orange);
+      border-radius: 14px;
+      padding: 14px 18px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(255,107,53,0.4);
+    }
+    #autoridade .auth-badge .b-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+    }
+    #autoridade .auth-badge .b-text {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.85);
+      margin-top: 2px;
+    }
+    #autoridade .auth-info h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    #autoridade .auth-info .subtitle {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    #autoridade .auth-info p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    #autoridade .credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    #autoridade .cred-item {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      color: #fff;
+      display: flex; align-items: center; gap: 6px;
+    }
+    #autoridade .cred-item i { color: var(--green); }
+
+    /* ─── ANTES E DEPOIS — CARROSSEL ─── */
+    #antes-depois {
+      background: #0a0a0a;
+      padding: 64px 0;
+    }
+    #antes-depois .ad-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 0 24px;
+    }
+    #antes-depois .ad-header h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    #antes-depois .ad-header p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.95rem;
+    }
+    #antes-depois .ad-carousel-wrap {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+    #antes-depois .ad-carousel-wrap::before,
+    #antes-depois .ad-carousel-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    #antes-depois .ad-carousel-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, #0a0a0a, transparent);
+    }
+    #antes-depois .ad-carousel-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, #0a0a0a, transparent);
+    }
+    #antes-depois .ad-track {
+      display: flex;
+      gap: 14px;
+      width: max-content;
+      padding: 4px 0 8px;
+      animation: scrollCarousel 40s linear infinite;
+    }
+    #antes-depois .ad-track:hover { animation-play-state: paused; }
+    @keyframes scrollCarousel {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    #antes-depois .ad-card {
+      flex-shrink: 0;
+      width: 360px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      background: #111;
+      transition: transform 0.3s;
+    }
+    #antes-depois .ad-card:hover { transform: scale(1.02); }
+    #antes-depois .ad-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    #antes-depois .ad-label { display: none; }
+
+    /* ─── OFERTA ─── */
+    #oferta {
+      background: var(--black);
+      color: #fff;
+    }
+    #oferta .oferta-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    #oferta .oferta-header h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    #oferta .oferta-header p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    #oferta .oferta-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: start;
+    }
+    #oferta .bonus-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    #oferta .bonus-item {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    #oferta .bonus-item:hover { border-color: rgba(46,204,113,0.4); }
+    #oferta .bonus-icon {
+      width: 44px; height: 44px;
+      background: rgba(46,204,113,0.12);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    #oferta .bonus-icon i { color: var(--green); font-size: 1.1rem; }
+    #oferta .bonus-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    #oferta .bonus-info p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.5;
+    }
+    #oferta .bonus-info .val {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-top: 6px;
+    }
+
+    /* ─── PREÇO ─── */
+    #preco {
+      background: #fff;
+    }
+    #preco .price-box {
+      max-width: 480px;
+      margin: 0 auto;
+      background: #fff;
+      border: 2px solid var(--green);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(46,204,113,0.12);
+      position: relative;
+    }
+    #preco .price-box::before {
+      content: 'MAIS POPULAR';
+      position: absolute;
+      top: -16px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      padding: 6px 20px;
+      border-radius: 50px;
+    }
+    #preco .price-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    #preco .price-old {
+      font-size: 1rem;
+      color: #aaa;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    #preco .price-current {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    #preco .price-current sup {
+      font-size: 1.4rem;
+      vertical-align: super;
+    }
+    #preco .price-installments {
+      color: var(--gray);
+      font-size: 0.88rem;
+      margin-bottom: 32px;
+    }
+    #preco .price-installments strong {
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+    #preco .price-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 36px;
+      text-align: left;
+    }
+    #preco .price-features li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.88rem;
+      color: #333;
+    }
+    #preco .price-features li i {
+      color: var(--green);
+      font-size: 0.9rem;
+    }
+    #preco .price-guarantee {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green-light);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-top: 20px;
+      text-align: left;
+    }
+    #preco .price-guarantee i {
+      color: var(--green-dark);
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+    #preco .price-guarantee p {
+      font-size: 0.8rem;
+      color: var(--green-deep);
+      line-height: 1.5;
+    }
+    #preco .price-guarantee strong { font-weight: 700; }
+
+    /* ─── FAQ / OBJEÇÕES ─── */
+    #faq {
+      background: var(--light);
+    }
+    #faq .faq-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    #faq .faq-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    #faq .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    #faq .faq-item {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    #faq .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      user-select: none;
+    }
+    #faq .faq-q span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+    #faq .faq-q i {
+      color: var(--green-dark);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    #faq .faq-item.open .faq-q i { transform: rotate(180deg); }
+    #faq .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    #faq .faq-item.open .faq-a { max-height: 300px; }
+    #faq .faq-a p {
+      padding: 0 24px 20px;
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    #faq .faq-a strong { color: var(--green-dark); }
+
+    /* ─── CTA FINAL ─── */
+    #cta-final {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-dark) 50%, var(--green) 100%);
+      padding: 100px 0;
+      text-align: center;
+    }
+    #cta-final h2 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    #cta-final p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.65;
+    }
+    #cta-final .urgency {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 50px;
+      padding: 10px 20px;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+    #cta-final .urgency i { color: var(--orange); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0a0a0a;
+      padding: 32px 0;
+    }
+    footer .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    footer .f-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    footer .f-logo span { color: var(--green); }
+    footer .f-links {
+      display: flex;
+      gap: 20px;
+    }
+    footer .f-links a {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.78rem;
+      transition: color 0.2s;
+    }
+    footer .f-links a:hover { color: var(--green); }
+    footer .f-copy {
+      color: rgba(255,255,255,0.25);
+      font-size: 0.75rem;
+    }
+
+    /* ─── FLOATING CTA ─── */
+    #floating-cta {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      z-index: 998;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s, transform 0.4s;
+      pointer-events: none;
+    }
+    #floating-cta.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #floating-cta a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--orange);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 14px 22px;
+      border-radius: 50px;
+      box-shadow: 0 8px 30px rgba(255,107,53,0.5);
+    }
+    #floating-cta a i { font-size: 0.9rem; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate { opacity: 0; }
+    .animate.in-view { animation: fadeUp 0.7s ease forwards; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      #crenca .crenca-grid { grid-template-columns: 1fr; }
+      #dor .dor-grid { grid-template-columns: repeat(2, 1fr); }
+      #pilares .pilares-grid { grid-template-columns: 1fr; }
+      #autoridade .auth-grid { grid-template-columns: 1fr; }
+      #autoridade .auth-photo { max-width: 320px; margin: 0 auto; }
+      #antes-depois .ad-grid { grid-template-columns: repeat(2, 1fr); }
+      #oferta .oferta-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      /* ── Hero mobile: imagem full, texto sobre com overlay baixo→cima ── */
+      #hero {
+        align-items: flex-end;
+        min-height: 100vh;
+        flex-direction: row;
+      }
+      #hero .hero-bg img.hero-bg-img-desktop { display: none; }
+      #hero .hero-bg img.hero-bg-img-mobile  { display: block; }
+
+      #hero .hero-bg {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+      }
+      #hero .hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      /* overlay de baixo para cima */
+      #hero .hero-overlay {
+        display: block;
+        background: linear-gradient(
+          to top,
+          rgb(0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.895) 28%,
+          rgba(0, 0, 0, 0.955) 62%,
+          transparent 78%
+        );
+      }
+
+      /* conteúdo colado na base */
+      #hero .hero-container {
+        padding: 0 24px 48px;
+        width: 100%;
+      }
+      #hero .hero-content {
+        max-width: 100%;
+        padding-top: 300px;
+        text-align: center;
+      }
+      #hero .hero-eyebrow { justify-content: center; }
+      #hero .hero-cta-wrap { align-items: center; }
+      #hero .social-proof { justify-content: center; gap: 12px; flex-wrap: nowrap; }
+      #hero .social-proof .sp-num { font-size: 1.35rem; }
+      #hero .social-proof .sp-label { font-size: 0.65rem; }
+      .hero-sub-detail { display: none; }
+
+      #dor .dor-grid { grid-template-columns: 1fr; }
+      #antes-depois .ad-grid { grid-template-columns: repeat(2, 1fr); }
+      #preco .price-box { padding: 40px 24px; }
+      .section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       1. HERO SECTION
+  ═══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg">
+      <img class="hero-bg-img-desktop" src="assets/hero-bg.png"    alt="" aria-hidden="true" />
+      <img class="hero-bg-img-mobile"  src="assets/hero-mobile.png" alt="" aria-hidden="true" />
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Método Live Coach</div>
+
+      <h1>
+        Chega de dieta.<br />
+        É hora de mudar<br />
+        seu corpo de vez <em></em>
+        <em>sem sofrimento.</em>
+      </h1>
+
+      <div class="social-proof">
+        <div class="sp-item">
+          <span class="sp-num">+3.800</span>
+          <span class="sp-label">mulheres<br />transformadas</span>
+        </div>
+        <div class="sp-divider"></div>
+        <div class="sp-item">
+          <span class="sp-num">98%</span>
+          <span class="sp-label">de aprovação<br />das alunas</span>
+        </div>
+        <div class="sp-divider"></div>
+        <div class="sp-item">
+          <span class="sp-num">12kg</span>
+          <span class="sp-label">média de perda<br />em 12 semanas</span>
+        </div>
+      </div>
+
+      <p class="hero-sub">
+        O programa exclusivo para mulheres que já tentaram tudo e sempre voltaram ao início.<br />
+        <strong class="hero-sub-detail">12 semanas. Método comprovado. Resultado que fica.</strong>
+      </p>
+
+      <div class="hero-cta-wrap">
+        <a href="#preco" class="btn-cta">
+          <i class="fas fa-arrow-right"></i>
+          Quero minha transformação agora
+        </a>
+        <span class="ghost-note">
+          <i class="fas fa-lock"></i>
+          Garantia de 7 dias • Sem risco
+        </span>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ─── TRUST BAR — MARQUEE ─── -->
+  <div id="trustbar" aria-hidden="true">
+    <div class="marquee-track">
+      <!-- set A -->
+      <div class="tb-item"><i class="fas fa-shield-alt"></i> 7 dias de garantia</div>
+      <span class="tb-sep">✦</span>
+      <div class="tb-item"><i class="fas fa-star"></i> +3.800 alunas transformadas</div>
+      <span class="tb-sep">✦</span>
+      <div class="tb-item"><i class="fas fa-certificate"></i> Método cientificamente embasado</div>
+      <span class="tb-sep">✦</span>
+      <div class="tb-item"><i class="fas fa-infinity"></i> Acesso vitalício</div>
+      <span class="tb-sep">✦</span>
+      <div class="tb-item"><i class="fas fa-headset"></i> Suporte exclusivo 6×/semana</div>
+      <span class="tb-sep">✦</span>
+      <div class="tb-item"><i class="fas fa-leaf"></i> Método 100% feminino</div>
+      <span class="tb-sep">✦</span>
+      <!-- set B (duplicado para loop seamless) -->
+      <div class="tb-item"><i class="fas fa-shield-alt"></i> 7 dias de garantia</div>
+      <span class="tb-sep">✦</span>
+      <div class="tb-item"><i class="fas fa-star"></i> +3.800 alunas transformadas</div>
+      <span class="tb-sep">✦</span>
+      <div class="tb-item"><i class="fas fa-certificate"></i> Método cientificamente embasado</div>
+      <span class="tb-sep">✦</span>
+      <div class="tb-item"><i class="fas fa-infinity"></i> Acesso vitalício</div>
+      <span class="tb-sep">✦</span>
+      <div class="tb-item"><i class="fas fa-headset"></i> Suporte exclusivo 6×/semana</div>
+      <span class="tb-sep">✦</span>
+      <div class="tb-item"><i class="fas fa-leaf"></i> Método 100% feminino</div>
+      <span class="tb-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       2. ANTES E DEPOIS — CARROSSEL (2ª dobra)
+  ═══════════════════════════════════════ -->
+  <section id="antes-depois">
+    <div class="ad-header animate">
+      <div class="tag" style="background: rgba(46,204,113,0.15); color: var(--green);">Resultados reais</div>
+      <h2>Antes &amp; Depois:<br /><span style="color: var(--green);">transformações que falam por si</span></h2>
+      <p>+3.800 mulheres já viveram essa transformação. Você é a próxima.</p>
+    </div>
+    <div class="ad-carousel-wrap">
+      <div class="ad-track">
+        <!-- Set A — 10 imagens -->
+        <div class="ad-card">
+          <img src="assets/1241fbe8-f2da-4dae-8e23-f54e6c59a9a2.jfif" alt="Transformação Fernanda" />
+          <div class="ad-label"><span class="result-kg">−14 kg</span>12 semanas • Fernanda</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/3db0b019-fa42-4f2a-aa12-80ba04d487bd.jfif" alt="Transformação Camila" />
+          <div class="ad-label"><span class="result-kg">−9 kg</span>8 semanas • Camila</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/4c8580cf-4a29-41ea-ad06-a1fc68dc4981.jfif" alt="Transformação Larissa" />
+          <div class="ad-label"><span class="result-kg">−18 kg</span>5 meses • Larissa</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/4ea79dee-4fa8-4461-ae8c-a85523d04764.jfif" alt="Transformação Patrícia" />
+          <div class="ad-label"><span class="result-kg">−22 kg</span>6 meses • Patrícia</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/5bfc40cd-6a39-40ae-ba7a-5288aa887b7f.jfif" alt="Transformação Renata" />
+          <div class="ad-label"><span class="result-kg">−11 kg</span>10 semanas • Renata</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/76837f3c-64ba-45d2-843c-dd680da26f42.jfif" alt="Transformação Juliana" />
+          <div class="ad-label"><span class="result-kg">−13 kg</span>Pós-gestação • Juliana</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/7b5eb807-cf1f-4519-9261-a8e3843ee369.jfif" alt="Transformação Patrícia L." />
+          <div class="ad-label"><span class="result-kg">−22 kg</span>6 meses • Patrícia L.</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/7c7d4141-eaa1-40fa-966f-9b116ba7e9ce.jfif" alt="Transformação" />
+          <div class="ad-label"><span class="result-kg">−17 kg</span>4 meses • Ana</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/807982a4-5c70-401f-b936-cfa741ebc07d.jfif" alt="Transformação" />
+          <div class="ad-label"><span class="result-kg">−15 kg</span>3 meses • Bianca</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/e456e656-ba87-4606-a42b-e13ce87ffef3.jfif" alt="Transformação" />
+          <div class="ad-label"><span class="result-kg">−19 kg</span>5 meses • Carol</div>
+        </div>
+        <!-- Set B — duplicado para loop seamless -->
+        <div class="ad-card">
+          <img src="assets/1241fbe8-f2da-4dae-8e23-f54e6c59a9a2.jfif" alt="Transformação Fernanda" />
+          <div class="ad-label"><span class="result-kg">−14 kg</span>12 semanas • Fernanda</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/3db0b019-fa42-4f2a-aa12-80ba04d487bd.jfif" alt="Transformação Camila" />
+          <div class="ad-label"><span class="result-kg">−9 kg</span>8 semanas • Camila</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/4c8580cf-4a29-41ea-ad06-a1fc68dc4981.jfif" alt="Transformação Larissa" />
+          <div class="ad-label"><span class="result-kg">−18 kg</span>5 meses • Larissa</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/4ea79dee-4fa8-4461-ae8c-a85523d04764.jfif" alt="Transformação Patrícia" />
+          <div class="ad-label"><span class="result-kg">−22 kg</span>6 meses • Patrícia</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/5bfc40cd-6a39-40ae-ba7a-5288aa887b7f.jfif" alt="Transformação Renata" />
+          <div class="ad-label"><span class="result-kg">−11 kg</span>10 semanas • Renata</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/76837f3c-64ba-45d2-843c-dd680da26f42.jfif" alt="Transformação Juliana" />
+          <div class="ad-label"><span class="result-kg">−13 kg</span>Pós-gestação • Juliana</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/7b5eb807-cf1f-4519-9261-a8e3843ee369.jfif" alt="Transformação Patrícia L." />
+          <div class="ad-label"><span class="result-kg">−22 kg</span>6 meses • Patrícia L.</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/7c7d4141-eaa1-40fa-966f-9b116ba7e9ce.jfif" alt="Transformação" />
+          <div class="ad-label"><span class="result-kg">−17 kg</span>4 meses • Ana</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/807982a4-5c70-401f-b936-cfa741ebc07d.jfif" alt="Transformação" />
+          <div class="ad-label"><span class="result-kg">−15 kg</span>3 meses • Bianca</div>
+        </div>
+        <div class="ad-card">
+          <img src="assets/e456e656-ba87-4606-a42b-e13ce87ffef3.jfif" alt="Transformação" />
+          <div class="ad-label"><span class="result-kg">−19 kg</span>5 meses • Carol</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       3. QUEBRA DE CRENÇA
+  ═══════════════════════════════════════ -->
+  <section id="crenca" class="section">
+    <div class="container">
+      <div class="crenca-grid">
+        <div class="crenca-text animate">
+          <div class="tag">Por que as dietas falham</div>
+          <h2>
+            O problema <span class="highlight">não é você</span>.<br />
+            É o método que usou até hoje.
+          </h2>
+          <p>
+            Se você já tentou dieta da proteína, low carb, jejum intermitente, modulação hormonal e voltou ao peso inicial isso não é falta de força de vontade.
+          </p>
+          <p>
+            É porque nenhum desses métodos foi criado <strong>levando em conta o corpo feminino</strong>, a flutuação hormonal e a relação emocional com a comida.
+          </p>
+          <p>
+            O Live Coach resolve exatamente isso.
+          </p>
+        </div>
+        <div class="crenca-myths animate">
+          <div class="myth-item">
+            <div class="myth-icon"><i class="fas fa-times-circle"></i></div>
+            <div class="myth-text">
+              <h4>"Preciso passar fome pra emagrecer"</h4>
+              <p>Mentira. Comer menos do que o necessário ativa o mecanismo de defesa do corpo e você engorda mais depois.</p>
+            </div>
+          </div>
+          <div class="myth-item">
+            <div class="myth-icon"><i class="fas fa-times-circle"></i></div>
+            <div class="myth-text">
+              <h4>"Só a academia resolve"</h4>
+              <p>Exercício sem estratégia nutricional e emocional não sustenta resultados. O efeito sanfona aparece inevitavelmente.</p>
+            </div>
+          </div>
+          <div class="myth-item">
+            <div class="myth-icon"><i class="fas fa-times-circle"></i></div>
+            <div class="myth-text">
+              <h4>"É questão de genética / metabolismo lento"</h4>
+              <p>O metabolismo responde à reprogramação. Nossas alunas com hipotireoidismo e SOP também atingiram resultados expressivos.</p>
+            </div>
+          </div>
+          <div class="myth-item">
+            <div class="myth-icon"><i class="fas fa-times-circle"></i></div>
+            <div class="myth-text">
+              <h4>"Já tentei tudo, não funciona pra mim"</h4>
+              <p>Você tentou métodos genéricos. O Live Coach é personalizado para o seu tipo de corpo, rotina e perfil hormonal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       3. IDENTIFICAÇÃO – DOR REAL
+  ═══════════════════════════════════════ -->
+  <section id="dor" class="section">
+    <div class="container">
+      <div class="dor-header animate">
+        <div class="tag" style="background:rgba(46,204,113,0.12); color: var(--green)">Você se identifica?</div>
+        <h2>Essas situações<br />são familiares para você?</h2>
+        <p>Se você se reconhece em pelo menos 3 dessas situações, o Live Coach foi feito exatamente para você.</p>
+      </div>
+      <div class="dor-grid">
+        <div class="dor-card animate">
+          <div class="dor-emoji">😔</div>
+          <h3>Efeito Sanfona Constante</h3>
+          <p>Você perde uns quilos, comemora e em 2 meses está de volta ao ponto de partida ou pior.</p>
+        </div>
+        <div class="dor-card animate">
+          <div class="dor-emoji">🍩</div>
+          <h3>Compulsão no Final do Dia</h3>
+          <p>De dia, força de vontade. À noite, a ansiedade fala mais alto e você vai à geladeira sem conseguir parar.</p>
+        </div>
+        <div class="dor-card animate">
+          <div class="dor-emoji">😣</div>
+          <h3>Cansaço e Inchaço Constante</h3>
+          <p>Você acorda cansada, sente o corpo inchado, e a balança não para de subir mesmo comendo "certinho".</p>
+        </div>
+        <div class="dor-card animate">
+          <div class="dor-emoji">👗</div>
+          <h3>Roupa que Não Serve</h3>
+          <p>O guarda-roupa tem três tamanhos diferentes e você evita se olhar no espelho antes de sair.</p>
+        </div>
+        <div class="dor-card animate">
+          <div class="dor-emoji">😰</div>
+          <h3>Vergonha em Eventos Sociais</h3>
+          <p>Você deixou de ir à praia, a festas ou encontros porque se sente mal com o próprio corpo.</p>
+        </div>
+        <div class="dor-card animate">
+          <div class="dor-emoji">💸</div>
+          <h3>Dinheiro Jogado em Dietas</h3>
+          <p>Já gastou com nutricionistas, suplementos e academias sem resultado duradouro. Está cansada de tentar.</p>
+        </div>
+      </div>
+      <div class="dor-bottom animate">
+        <p>Se você disse SIM para qualquer uma dessas, existe uma solução real esperando por você.</p>
+        <a href="#preco" class="btn-cta">
+          <i class="fas fa-heart"></i>
+          Quero sair dessa situação agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       4. MECANISMO – OS 3 PILARES
+  ═══════════════════════════════════════ -->
+  <section id="pilares" class="section">
+    <div class="container">
+      <div class="pilares-header animate">
+        <div class="tag">Como funciona</div>
+        <h2>O Método de <span class="text-green">3 Pilares</span> que<br />garante resultados permanentes</h2>
+        <p>Diferente de qualquer dieta que você já tentou, o Live Coach atua simultaneamente nas 3 causas reais do efeito sanfona.</p>
+      </div>
+      <div class="pilares-grid">
+        <div class="pilar-card animate">
+          <div class="pilar-top">
+            <div class="pilar-num">01</div>
+            <div class="pilar-icon"><i class="fas fa-leaf"></i></div>
+            <h3>Nutrição<br />Inteligente Feminina</h3>
+          </div>
+          <div class="pilar-body">
+            <p>Um protocolo nutricional criado especificamente para o ciclo hormonal feminino. Você come bem, sem culpa e o corpo emagrece naturalmente.</p>
+            <ul class="pilar-items">
+              <li><i class="fas fa-check-circle"></i> Cardápios adaptados ao seu ciclo</li>
+              <li><i class="fas fa-check-circle"></i> Receitas práticas e saborosas</li>
+              <li><i class="fas fa-check-circle"></i> Estratégias anti-inflamatórias</li>
+              <li><i class="fas fa-check-circle"></i> Sem restrição absurda de grupos alimentares</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pilar-card animate">
+          <div class="pilar-top">
+            <div class="pilar-num">02</div>
+            <div class="pilar-icon"><i class="fas fa-brain"></i></div>
+            <h3>Reprogramação<br />Emocional</h3>
+          </div>
+          <div class="pilar-body">
+            <p>A ansiedade e a compulsão alimentar têm raízes emocionais. Nosso módulo de reprogramação trata a causa não apenas o sintoma.</p>
+            <ul class="pilar-items">
+              <li><i class="fas fa-check-circle"></i> Técnicas de regulação emocional</li>
+              <li><i class="fas fa-check-circle"></i> Quebra de padrões de compulsão</li>
+              <li><i class="fas fa-check-circle"></i> Mindfulness aplicado à alimentação</li>
+              <li><i class="fas fa-check-circle"></i> Reeducação da relação com o corpo</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pilar-card animate">
+          <div class="pilar-top">
+            <div class="pilar-num">03</div>
+            <div class="pilar-icon"><i class="fas fa-fire-alt"></i></div>
+            <h3>Ativação<br />Metabólica</h3>
+          </div>
+          <div class="pilar-body">
+            <p>Protocolos de movimento adaptados para acelerar seu metabolismo sem sobrecarregar mesmo que você odeie academia.</p>
+            <ul class="pilar-items">
+              <li><i class="fas fa-check-circle"></i> Treinos de 20 a 30 minutos em casa</li>
+              <li><i class="fas fa-check-circle"></i> Sem equipamentos necessários</li>
+              <li><i class="fas fa-check-circle"></i> Progressão inteligente e segura</li>
+              <li><i class="fas fa-check-circle"></i> Foco em queima de gordura sustentável</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       5. AUTORIDADE
+  ═══════════════════════════════════════ -->
+  <section id="autoridade" class="section">
+    <div class="container">
+      <div class="auth-grid">
+        <div class="auth-photo animate">
+          <img src="assets/e456e656-ba87-4606-a42b-e13ce87ffef3.jfif" alt="Especialista Live Coach" />
+          <div class="auth-badge">
+            <div class="b-num">8+</div>
+            <div class="b-text">anos de<br />experiência</div>
+          </div>
+        </div>
+        <div class="auth-info animate">
+          <h2>Conheça a especialista<br /><em style="font-style:normal; color: var(--green);">por trás do método</em></h2>
+          <p class="subtitle">Nutricionista Esportiva · Coach de Emagrecimento Feminino</p>
+          <p>
+            Ao longo de mais de 8 anos atendendo mulheres com dificuldade para emagrecer, percebi que o problema nunca era a falta de esforço. Era a ausência de um método que entendesse o corpo, a mente e a rotina feminina de forma integrada.
+          </p>
+          <p>
+            Desenvolvi o método Live Coach a partir de centenas de casos reais incluindo mulheres com SOP, hipotireoidismo, menopausa e histórico de transtorno alimentar. O resultado foi um protocolo que gera transformações físicas e, mais importante, <strong>mudanças de vida permanentes</strong>.
+          </p>
+          <p>
+            Já ajudei mais de 3.800 mulheres a saírem do ciclo do efeito sanfona de uma vez por todas. E posso ajudar você também.
+          </p>
+          <div class="credentials">
+            <div class="cred-item"><i class="fas fa-graduation-cap"></i> Nutrição Esportiva</div>
+            <div class="cred-item"><i class="fas fa-certificate"></i> Coaching de Emagrecimento</div>
+            <div class="cred-item"><i class="fas fa-heart"></i> Saúde Hormonal Feminina</div>
+            <div class="cred-item"><i class="fas fa-award"></i> +3.800 alunas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       8. OFERTA
+  ═══════════════════════════════════════ -->
+  <section id="oferta" class="section">
+    <div class="container">
+      <div class="oferta-header animate">
+        <div class="tag" style="background: rgba(46,204,113,0.12); color: var(--green)">O que você leva</div>
+        <h2>Tudo que você precisa para<br />sua transformação definitiva</h2>
+        <p>Um programa completo sem achismo, sem promessa vazia criado do zero para o corpo feminino.</p>
+      </div>
+      <div class="oferta-grid">
+        <div class="bonus-list">
+          <div class="bonus-item animate">
+            <div class="bonus-icon"><i class="fas fa-video"></i></div>
+            <div class="bonus-info">
+              <h4>Programa Live Coach Completo (12 semanas)</h4>
+              <p>Mais de 60 videoaulas organizadas por módulo: nutrição, movimento e reprogramação emocional.</p>
+              <div class="val">Valor: R$ 497</div>
+            </div>
+          </div>
+          <div class="bonus-item animate">
+            <div class="bonus-icon"><i class="fas fa-utensils"></i></div>
+            <div class="bonus-info">
+              <h4>Cardápio Personalizado por Ciclo</h4>
+              <p>Plano alimentar ajustado às fases do seu ciclo menstrual. Sem restrições desnecessárias.</p>
+              <div class="val">Valor: R$ 197</div>
+            </div>
+          </div>
+          <div class="bonus-item animate">
+            <div class="bonus-icon"><i class="fas fa-dumbbell"></i></div>
+            <div class="bonus-info">
+              <h4>Protocolo de Treinos em Casa</h4>
+              <p>Treinos de 20 a 30 minutos sem equipamento. Adaptados para cada fase do programa.</p>
+              <div class="val">Valor: R$ 147</div>
+            </div>
+          </div>
+          <div class="bonus-item animate">
+            <div class="bonus-icon"><i class="fas fa-users"></i></div>
+            <div class="bonus-info">
+              <h4>Comunidade Exclusiva no WhatsApp</h4>
+              <p>Grupo privado com todas as alunas ativas + suporte da equipe Live Coach 6 dias por semana.</p>
+              <div class="val">Valor: R$ 97</div>
+            </div>
+          </div>
+          <div class="bonus-item animate">
+            <div class="bonus-icon"><i class="fas fa-gift"></i></div>
+            <div class="bonus-info">
+              <h4>🎁 BÔNUS: Guia Anti-Ansiedade Alimentar</h4>
+              <p>Técnicas práticas para parar a compulsão em até 3 minutos. Funciona mesmo à noite.</p>
+              <div class="val">Valor: R$ 97 GRÁTIS</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px; animate" class="animate">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 16px;">Resumo do valor total</div>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.65);">
+                <span>Programa Completo</span><span style="color: #fff; font-weight: 600;">R$ 497</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.65);">
+                <span>Cardápio Personalizado</span><span style="color: #fff; font-weight: 600;">R$ 197</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.65);">
+                <span>Protocolo de Treinos</span><span style="color: #fff; font-weight: 600;">R$ 147</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.65);">
+                <span>Comunidade Exclusiva</span><span style="color: #fff; font-weight: 600;">R$ 97</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.65);">
+                <span>Bônus: Guia Anti-Ansiedade</span><span style="color: var(--green); font-weight: 600;">GRÁTIS</span>
+              </div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                <span>Valor total</span><span style="text-decoration: line-through;">R$ 1.035</span>
+              </div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 4px;">Hoje por apenas</div>
+              <div style="font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 900; color: var(--green); line-height: 1;">R$ 197</div>
+              <div style="font-size: 0.82rem; color: rgba(255,255,255,0.55); margin-bottom: 20px;">ou 12× de R$ 18,99</div>
+              <a href="#preco" class="btn-cta" style="width: 100%; justify-content: center;">
+                <i class="fas fa-lock"></i>
+                Garantir com desconto
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       9. PREÇO
+  ═══════════════════════════════════════ -->
+  <section id="preco" class="section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 48px;" class="animate">
+        <div class="tag">Oferta por tempo limitado</div>
+        <h2 style="font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 12px;">
+          Invista na sua <span class="text-green">transformação definitiva</span>
+        </h2>
+        <p style="color: var(--gray); font-size: 1rem; max-width: 480px; margin: 0 auto;">
+          Sem mensalidade. Sem renovação automática. Acesso vitalício por um valor único.
+        </p>
+      </div>
+
+      <div class="price-box animate">
+        <div class="price-name">Live Coach Programa Completo</div>
+        <div class="price-old">De R$ 1.035,00</div>
+        <div class="price-current"><sup>R$</sup>197</div>
+        <div class="price-installments">
+          ou <strong>12× de R$ 18,99</strong> no cartão
+        </div>
+
+        <a href="#" class="btn-cta" style="width: 100%; justify-content: center; font-size: 1.05rem;">
+          <i class="fas fa-shopping-cart"></i>
+          Quero começar minha transformação
+        </a>
+        <span class="btn-ghost" style="color: var(--gray); font-size: 0.78rem; margin-top: 12px; text-align: center; display: block;">
+          <i class="fas fa-lock" style="color: var(--green); margin-right: 4px;"></i>
+          Pagamento 100% seguro · Processado por Stripe / Hotmart
+        </span>
+
+        <ul class="price-features">
+          <li><i class="fas fa-check-circle"></i> Programa Completo de 12 semanas (60+ videoaulas)</li>
+          <li><i class="fas fa-check-circle"></i> Cardápio Personalizado por Ciclo Hormonal</li>
+          <li><i class="fas fa-check-circle"></i> Protocolo de Treinos em Casa (sem equipamentos)</li>
+          <li><i class="fas fa-check-circle"></i> Comunidade Exclusiva no WhatsApp</li>
+          <li><i class="fas fa-check-circle"></i> Suporte da equipe 6 dias por semana</li>
+          <li><i class="fas fa-check-circle"></i> Acesso vitalício (sem prazo de expiração)</li>
+          <li><i class="fas fa-check-circle"></i> 🎁 Bônus: Guia Anti-Ansiedade Alimentar (GRÁTIS)</li>
+        </ul>
+
+        <div class="price-guarantee">
+          <i class="fas fa-shield-alt"></i>
+          <p><strong>Garantia incondicional de 7 dias.</strong> Se por qualquer motivo você não ficar satisfeita, devolvemos 100% do seu dinheiro. Sem burocracia, sem perguntas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       10. FAQ – OBJEÇÕES
+  ═══════════════════════════════════════ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="faq-header animate">
+        <div class="tag">Dúvidas frequentes</div>
+        <h2>Suas perguntas,<br /><span class="text-green">respondidas com honestidade</span></h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Funciona mesmo pra quem tem muita dificuldade de emagrecer?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            <p>Sim. Nosso método foi desenvolvido especialmente para mulheres com histórico de dificuldade para emagrecer inclusive casos de <strong>SOP, hipotireoidismo, menopausa e metabolismo lento</strong>. O programa se adapta ao seu perfil.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Preciso de academia ou equipamentos para fazer os treinos?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            <p>Não. Todos os treinos foram desenvolvidos para serem feitos em casa, sem nenhum equipamento. São sessões de <strong>20 a 30 minutos</strong> que você encaixa na sua rotina.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Em quanto tempo verei os primeiros resultados?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            <p>A maioria das alunas relata perceber diferença no corpo, na energia e no inchaço já na <strong>1ª e 2ª semana</strong>. Resultados mais expressivos aparecem a partir da 3ª e 4ª semana quando o metabolismo começa a responder.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>O resultado volta depois que terminar o programa?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            <p>Essa é exatamente a diferença do Live Coach. Diferente de dietas, aqui você <strong>reprograma hábitos, crenças e comportamentos</strong>. Você não para "a dieta" você muda a relação com a comida e o corpo para sempre.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Tenho que passar fome ou cortar alimentos que amo?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            <p>Não. O programa é construído em cima de <strong>substituições inteligentes e reequilíbrio</strong> não de proibição. Você vai descobrir como comer bem, com prazer, e ainda assim perder peso.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>E se eu não gostar? Posso pedir reembolso?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            <p>Sim. Você tem <strong>7 dias de garantia incondicional</strong>. Basta enviar um e-mail e devolvemos 100% do valor pago. Sem perguntas, sem burocracia.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Como funciona o acesso ao programa?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            <p>Após o pagamento, você recebe imediatamente um e-mail com seu acesso à plataforma. Lá encontrará todos os módulos, vídeos, materiais complementares e o link para a comunidade. O acesso é <strong>vitalício</strong> você estuda no seu ritmo.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       11. CTA FINAL
+  ═══════════════════════════════════════ -->
+  <section id="cta-final">
+    <div class="container">
+      <div class="animate">
+        <div class="tag" style="background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9);">Última chance</div>
+        <h2>
+          A mulher que você quer ser<br />
+          está a uma decisão de distância.
+        </h2>
+        <p>
+          Você já tentou força de vontade. Já tentou dieta. Já tentou academia. Agora é a hora de tentar o que realmente funciona.
+        </p>
+        <a href="#preco" class="btn-cta" style="font-size: 1.1rem; padding: 20px 48px;">
+          <i class="fas fa-heart"></i>
+          Quero minha transformação agora
+        </a>
+        <div class="urgency">
+          <i class="fas fa-fire"></i>
+          Oferta com desconto disponível por tempo limitado
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="f-logo">Live<span>Coach</span></div>
+        <div class="f-links">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+          <a href="#">Contato</a>
+        </div>
+        <div class="f-copy">© 2026 Live Coach. Todos os direitos reservados.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── FLOATING CTA ─── -->
+  <div id="floating-cta">
+    <a href="#preco"><i class="fas fa-lock"></i> Garantir acesso agora</a>
+  </div>
+
+  <!-- ─── SCRIPTS ─── -->
+  <script>
+    /* ── FAQ accordion ── */
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    /* ── Scroll animations ── */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('in-view'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+
+    /* ── Floating CTA show after scroll ── */
+    const floatCta = document.getElementById('floating-cta');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight * 0.8) {
+        floatCta.classList.add('show');
+      } else {
+        floatCta.classList.remove('show');
+      }
+    });
+
+    /* ── Smooth counter animation for hero numbers ── */
+    function animateCounter(el, target, suffix = '') {
+      let start = 0;
+      const duration = 1800;
+      const step = target / (duration / 16);
+      const timer = setInterval(() => {
+        start += step;
+        if (start >= target) { start = target; clearInterval(timer); }
+        el.textContent = Math.floor(start).toLocaleString('pt-BR') + suffix;
+      }, 16);
+    }
+
+    /* ── Topbar hide on scroll up, show on scroll down ── */
+    let lastScroll = 0;
+    const topbar = document.getElementById('topbar');
+    window.addEventListener('scroll', () => {
+      const current = window.scrollY;
+      if (current > lastScroll && current > 200) {
+        topbar.style.transform = 'translateY(-100%)';
+        topbar.style.transition = 'transform 0.3s ease';
+      } else {
+        topbar.style.transform = 'translateY(0)';
+      }
+      lastScroll = current;
+    });
+  </script>
+</body>
+</html>
