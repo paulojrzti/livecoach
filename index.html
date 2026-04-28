@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Live Coach – Programa de Emagrecimento Feminino</title>
-  <meta name="description" content="Método exclusivo para mulheres que já tentaram de tudo e ainda sofrem com o efeito sanfona. Resultados reais em 12 semanas." />
+  <meta name="description" content="Método exclusivo para mulheres que já tentaram de tudo e ainda sofrem com o efeito sanfona. Resultados reais em 30 dias." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -151,22 +151,14 @@
       padding: 48px 0;
     }
     #hero .hero-eyebrow {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 18px;
+      margin-bottom: 24px;
       display: flex;
       align-items: center;
-      gap: 8px;
     }
-    #hero .hero-eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 30px; height: 2px;
-      background: var(--green);
+    #hero .hero-eyebrow img {
+      width: 145px;
+      height: auto;
+      display: block;
     }
     #hero h1 {
       font-size: clamp(2.4rem, 5vw, 3.6rem);
@@ -372,37 +364,24 @@
       margin: 0 auto;
       line-height: 1.65;
     }
-    #dor .dor-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    #dor .dor-stack {
+      max-width: 920px;
+      margin: 0 auto;
+      padding-bottom: 24px;
     }
-    #dor .dor-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 28px 24px;
-      text-align: center;
-      transition: background 0.3s, border-color 0.3s;
+    #dor .dor-stack-item {
+      position: sticky;
+      top: 80px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 34px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      background: #0a0a0a;
     }
-    #dor .dor-card:hover {
-      background: rgba(46,204,113,0.08);
-      border-color: rgba(46,204,113,0.3);
-    }
-    #dor .dor-card .dor-emoji {
-      font-size: 2.2rem;
-      margin-bottom: 14px;
-    }
-    #dor .dor-card h3 {
-      font-size: 0.98rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-    #dor .dor-card p {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.55;
+    #dor .dor-stack-item img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
     #dor .dor-bottom {
       text-align: center;
@@ -672,51 +651,84 @@
     }
     #oferta .oferta-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
+      grid-template-columns: 1fr;
+      gap: 28px;
       align-items: start;
     }
     #oferta .bonus-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
     #oferta .bonus-item {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 14px;
-      padding: 20px;
+      padding: 0 0 20px;
       display: flex;
-      gap: 16px;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
       transition: border-color 0.2s;
+      overflow: hidden;
     }
     #oferta .bonus-item:hover { border-color: rgba(46,204,113,0.4); }
-    #oferta .bonus-icon {
-      width: 44px; height: 44px;
-      background: rgba(46,204,113,0.12);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
+    #oferta .bonus-mockup {
+      width: 100%;
+      overflow: hidden;
       flex-shrink: 0;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    #oferta .bonus-icon i { color: var(--green); font-size: 1.1rem; }
+    #oferta .bonus-mockup img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    #oferta .bonus-info {
+      text-align: center;
+      padding: 0 16px;
+    }
     #oferta .bonus-info h4 {
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 4px;
+      margin: 14px 0 6px;
     }
     #oferta .bonus-info p {
       font-size: 0.8rem;
       color: rgba(255,255,255,0.55);
       line-height: 1.5;
     }
-    #oferta .bonus-info .val {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.78rem;
+    #oferta .bonus-info .gift-old {
+      color: #ff5a5a;
+      text-decoration: line-through;
       font-weight: 700;
+    }
+    #oferta .bonus-info .gift-tag {
+      display: inline-block;
+      margin-top: 8px;
+      background: rgba(46,204,113,0.15);
       color: var(--green);
-      margin-top: 6px;
+      border: 1px solid rgba(46,204,113,0.35);
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    #oferta .bonus-info .gift-row {
+      margin-top: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    #oferta .bonus-info .gift-free {
+      font-size: 0.74rem;
+      color: rgba(255,255,255,0.82);
+      font-weight: 600;
     }
 
     /* ─── PREÇO ─── */
@@ -733,6 +745,24 @@
       text-align: center;
       box-shadow: 0 20px 60px rgba(46,204,113,0.12);
       position: relative;
+    }
+    #preco .promo-timer {
+      margin: 18px auto 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #111;
+      color: #fff;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    #preco .promo-timer b {
+      color: #ff6b35;
+      font-size: 0.88rem;
+      letter-spacing: 1px;
     }
     #preco .price-box::before {
       content: 'MAIS POPULAR';
@@ -764,14 +794,14 @@
     }
     #preco .price-current {
       font-family: 'Montserrat', sans-serif;
-      font-size: 3.2rem;
+      font-size: 4.1rem;
       font-weight: 900;
       color: var(--black);
       line-height: 1;
       margin-bottom: 6px;
     }
     #preco .price-current sup {
-      font-size: 1.4rem;
+      font-size: 1.75rem;
       vertical-align: super;
     }
     #preco .price-installments {
@@ -800,6 +830,15 @@
       color: var(--green);
       font-size: 0.9rem;
     }
+    #preco .gift-old {
+      color: #e54848;
+      text-decoration: line-through;
+      font-weight: 700;
+    }
+    #preco .gift-free {
+      color: var(--green-dark);
+      font-weight: 700;
+    }
     #preco .price-guarantee {
       display: flex;
       align-items: center;
@@ -813,6 +852,11 @@
     #preco .price-guarantee i {
       color: var(--green-dark);
       font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+    #preco .price-guarantee img {
+      width: 72px;
+      height: auto;
       flex-shrink: 0;
     }
     #preco .price-guarantee p {
@@ -928,13 +972,11 @@
       flex-wrap: wrap;
       gap: 16px;
     }
-    footer .f-logo {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 900;
-      color: #fff;
+    footer .f-logo img {
+      width: 140px;
+      height: auto;
+      display: block;
     }
-    footer .f-logo span { color: var(--green); }
     footer .f-links {
       display: flex;
       gap: 20px;
@@ -993,12 +1035,14 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       #crenca .crenca-grid { grid-template-columns: 1fr; }
-      #dor .dor-grid { grid-template-columns: repeat(2, 1fr); }
+      #dor .dor-stack { max-width: 760px; }
+      #dor .dor-stack-item { top: 72px; margin-bottom: 24px; }
       #pilares .pilares-grid { grid-template-columns: 1fr; }
       #autoridade .auth-grid { grid-template-columns: 1fr; }
       #autoridade .auth-photo { max-width: 320px; margin: 0 auto; }
       #antes-depois .ad-grid { grid-template-columns: repeat(2, 1fr); }
       #oferta .oferta-grid { grid-template-columns: 1fr; }
+      #oferta .bonus-list { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
@@ -1046,13 +1090,19 @@
         text-align: center;
       }
       #hero .hero-eyebrow { justify-content: center; }
+      #hero .hero-eyebrow img { width: 128px; }
       #hero .hero-cta-wrap { align-items: center; }
       #hero .social-proof { justify-content: center; gap: 12px; flex-wrap: nowrap; }
       #hero .social-proof .sp-num { font-size: 1.35rem; }
       #hero .social-proof .sp-label { font-size: 0.65rem; }
       .hero-sub-detail { display: none; }
 
-      #dor .dor-grid { grid-template-columns: 1fr; }
+      #dor .dor-stack { max-width: 100%; }
+      #dor .dor-stack-item {
+        top: 56px;
+        border-radius: 14px;
+        margin-bottom: 16px;
+      }
       #antes-depois .ad-grid { grid-template-columns: repeat(2, 1fr); }
       #preco .price-box { padding: 40px 24px; }
       .section { padding: 60px 0; }
@@ -1073,7 +1123,9 @@
 
     <div class="hero-container">
     <div class="hero-content">
-      <div class="hero-eyebrow">Método Live Coach</div>
+      <div class="hero-eyebrow">
+        <img src="logo.png" alt="Live Coach" />
+      </div>
 
       <h1>
         Chega de dieta.<br />
@@ -1084,7 +1136,7 @@
 
       <div class="social-proof">
         <div class="sp-item">
-          <span class="sp-num">+3.800</span>
+          <span class="sp-num">+4500</span>
           <span class="sp-label">mulheres<br />transformadas</span>
         </div>
         <div class="sp-divider"></div>
@@ -1095,17 +1147,17 @@
         <div class="sp-divider"></div>
         <div class="sp-item">
           <span class="sp-num">12kg</span>
-          <span class="sp-label">média de perda<br />em 12 semanas</span>
+          <span class="sp-label">média de perda<br />em 30 dias</span>
         </div>
       </div>
 
       <p class="hero-sub">
         O programa exclusivo para mulheres que já tentaram tudo e sempre voltaram ao início.<br />
-        <strong class="hero-sub-detail">12 semanas. Método comprovado. Resultado que fica.</strong>
+        <strong class="hero-sub-detail">30 dias. Método comprovado. Resultado rápido que fica.</strong>
       </p>
 
       <div class="hero-cta-wrap">
-        <a href="#preco" class="btn-cta">
+        <a href="#oferta" class="btn-cta">
           <i class="fas fa-arrow-right"></i>
           Quero minha transformação agora
         </a>
@@ -1124,7 +1176,7 @@
       <!-- set A -->
       <div class="tb-item"><i class="fas fa-shield-alt"></i> 7 dias de garantia</div>
       <span class="tb-sep">✦</span>
-      <div class="tb-item"><i class="fas fa-star"></i> +3.800 alunas transformadas</div>
+      <div class="tb-item"><i class="fas fa-star"></i> +4500 casos</div>
       <span class="tb-sep">✦</span>
       <div class="tb-item"><i class="fas fa-certificate"></i> Método cientificamente embasado</div>
       <span class="tb-sep">✦</span>
@@ -1137,7 +1189,7 @@
       <!-- set B (duplicado para loop seamless) -->
       <div class="tb-item"><i class="fas fa-shield-alt"></i> 7 dias de garantia</div>
       <span class="tb-sep">✦</span>
-      <div class="tb-item"><i class="fas fa-star"></i> +3.800 alunas transformadas</div>
+      <div class="tb-item"><i class="fas fa-star"></i> +4500 casos</div>
       <span class="tb-sep">✦</span>
       <div class="tb-item"><i class="fas fa-certificate"></i> Método cientificamente embasado</div>
       <span class="tb-sep">✦</span>
@@ -1157,7 +1209,7 @@
     <div class="ad-header animate">
       <div class="tag" style="background: rgba(46,204,113,0.15); color: var(--green);">Resultados reais</div>
       <h2>Antes &amp; Depois:<br /><span style="color: var(--green);">transformações que falam por si</span></h2>
-      <p>+3.800 mulheres já viveram essa transformação. Você é a próxima.</p>
+      <p>+4500 casos já viveram essa transformação. Você é a próxima.</p>
     </div>
     <div class="ad-carousel-wrap">
       <div class="ad-track">
@@ -1248,7 +1300,44 @@
   </section>
 
   <!-- ═══════════════════════════════════════
-       3. QUEBRA DE CRENÇA
+       3. IDENTIFICAÇÃO – DOR REAL
+  ═══════════════════════════════════════ -->
+  <section id="dor" class="section">
+    <div class="container">
+      <div class="dor-header animate">
+        <div class="tag" style="background:rgba(46,204,113,0.12); color: var(--green)">Você se identifica?</div>
+        <h2>Essas situações<br />são familiares para você?</h2>
+        <p>Se você se reconhece em pelo menos 3 dessas situações, o Live Coach foi feito exatamente para você.</p>
+      </div>
+      <div class="dor-stack animate">
+        <div class="dor-stack-item">
+          <img src="assets/identifica/efeito-sanfona.png" alt="Efeito sanfona" />
+        </div>
+        <div class="dor-stack-item">
+          <img src="assets/identifica/compusal-nofinal-do-dia.png" alt="Compulsão no final do dia" />
+        </div>
+        <div class="dor-stack-item">
+          <img src="assets/identifica/cansaco-inchaço.png" alt="Cansaço e inchaço constante" />
+        </div>
+        <div class="dor-stack-item">
+          <img src="assets/identifica/vergonha-eventos.png" alt="Vergonha em eventos sociais" />
+        </div>
+        <div class="dor-stack-item">
+          <img src="assets/identifica/dinheiro-jogado-fora.png" alt="Dinheiro jogado fora em dietas" />
+        </div>
+      </div>
+      <div class="dor-bottom animate">
+        <p>Se você disse SIM para qualquer uma dessas, existe uma solução real esperando por você.</p>
+        <a href="#oferta" class="btn-cta">
+          <i class="fas fa-heart"></i>
+          Quero sair dessa situação agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       4. QUEBRA DE CRENÇA
   ═══════════════════════════════════════ -->
   <section id="crenca" class="section">
     <div class="container">
@@ -1299,58 +1388,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════
-       3. IDENTIFICAÇÃO – DOR REAL
-  ═══════════════════════════════════════ -->
-  <section id="dor" class="section">
-    <div class="container">
-      <div class="dor-header animate">
-        <div class="tag" style="background:rgba(46,204,113,0.12); color: var(--green)">Você se identifica?</div>
-        <h2>Essas situações<br />são familiares para você?</h2>
-        <p>Se você se reconhece em pelo menos 3 dessas situações, o Live Coach foi feito exatamente para você.</p>
-      </div>
-      <div class="dor-grid">
-        <div class="dor-card animate">
-          <div class="dor-emoji">😔</div>
-          <h3>Efeito Sanfona Constante</h3>
-          <p>Você perde uns quilos, comemora e em 2 meses está de volta ao ponto de partida ou pior.</p>
-        </div>
-        <div class="dor-card animate">
-          <div class="dor-emoji">🍩</div>
-          <h3>Compulsão no Final do Dia</h3>
-          <p>De dia, força de vontade. À noite, a ansiedade fala mais alto e você vai à geladeira sem conseguir parar.</p>
-        </div>
-        <div class="dor-card animate">
-          <div class="dor-emoji">😣</div>
-          <h3>Cansaço e Inchaço Constante</h3>
-          <p>Você acorda cansada, sente o corpo inchado, e a balança não para de subir mesmo comendo "certinho".</p>
-        </div>
-        <div class="dor-card animate">
-          <div class="dor-emoji">👗</div>
-          <h3>Roupa que Não Serve</h3>
-          <p>O guarda-roupa tem três tamanhos diferentes e você evita se olhar no espelho antes de sair.</p>
-        </div>
-        <div class="dor-card animate">
-          <div class="dor-emoji">😰</div>
-          <h3>Vergonha em Eventos Sociais</h3>
-          <p>Você deixou de ir à praia, a festas ou encontros porque se sente mal com o próprio corpo.</p>
-        </div>
-        <div class="dor-card animate">
-          <div class="dor-emoji">💸</div>
-          <h3>Dinheiro Jogado em Dietas</h3>
-          <p>Já gastou com nutricionistas, suplementos e academias sem resultado duradouro. Está cansada de tentar.</p>
-        </div>
-      </div>
-      <div class="dor-bottom animate">
-        <p>Se você disse SIM para qualquer uma dessas, existe uma solução real esperando por você.</p>
-        <a href="#preco" class="btn-cta">
-          <i class="fas fa-heart"></i>
-          Quero sair dessa situação agora
-        </a>
       </div>
     </div>
   </section>
@@ -1427,7 +1464,7 @@
     <div class="container">
       <div class="auth-grid">
         <div class="auth-photo animate">
-          <img src="assets/e456e656-ba87-4606-a42b-e13ce87ffef3.jfif" alt="Especialista Live Coach" />
+          <img src="assets/especialista.jpg" alt="Especialista Live Coach" />
           <div class="auth-badge">
             <div class="b-num">8+</div>
             <div class="b-text">anos de<br />experiência</div>
@@ -1443,13 +1480,13 @@
             Desenvolvi o método Live Coach a partir de centenas de casos reais incluindo mulheres com SOP, hipotireoidismo, menopausa e histórico de transtorno alimentar. O resultado foi um protocolo que gera transformações físicas e, mais importante, <strong>mudanças de vida permanentes</strong>.
           </p>
           <p>
-            Já ajudei mais de 3.800 mulheres a saírem do ciclo do efeito sanfona de uma vez por todas. E posso ajudar você também.
+            Já ajudei em mais de +4500 casos de transformação e posso ajudar você também.
           </p>
           <div class="credentials">
             <div class="cred-item"><i class="fas fa-graduation-cap"></i> Nutrição Esportiva</div>
             <div class="cred-item"><i class="fas fa-certificate"></i> Coaching de Emagrecimento</div>
             <div class="cred-item"><i class="fas fa-heart"></i> Saúde Hormonal Feminina</div>
-            <div class="cred-item"><i class="fas fa-award"></i> +3.800 alunas</div>
+            <div class="cred-item"><i class="fas fa-award"></i> +4500 casos</div>
           </div>
         </div>
       </div>
@@ -1463,80 +1500,85 @@
     <div class="container">
       <div class="oferta-header animate">
         <div class="tag" style="background: rgba(46,204,113,0.12); color: var(--green)">O que você leva</div>
-        <h2>Tudo que você precisa para<br />sua transformação definitiva</h2>
-        <p>Um programa completo sem achismo, sem promessa vazia criado do zero para o corpo feminino.</p>
+        <h2>Seus presentes exclusivos<br />para acelerar seus resultados</h2>
+        <p>Ao entrar hoje, você recebe bônus estratégicos sem custo adicional para potencializar seu emagrecimento em 30 dias.</p>
       </div>
       <div class="oferta-grid">
         <div class="bonus-list">
           <div class="bonus-item animate">
-            <div class="bonus-icon"><i class="fas fa-video"></i></div>
-            <div class="bonus-info">
-              <h4>Programa Live Coach Completo (12 semanas)</h4>
-              <p>Mais de 60 videoaulas organizadas por módulo: nutrição, movimento e reprogramação emocional.</p>
-              <div class="val">Valor: R$ 497</div>
-            </div>
-          </div>
-          <div class="bonus-item animate">
-            <div class="bonus-icon"><i class="fas fa-utensils"></i></div>
+            <div class="bonus-mockup"><img src="assets/mockkups/cardapio.png" alt="Mockup do Cardápio Personalizado por Ciclo" /></div>
             <div class="bonus-info">
               <h4>Cardápio Personalizado por Ciclo</h4>
-              <p>Plano alimentar ajustado às fases do seu ciclo menstrual. Sem restrições desnecessárias.</p>
-              <div class="val">Valor: R$ 197</div>
+              <p>Plano alimentar alinhado ao seu ciclo hormonal para reduzir inchaço, ansiedade e facilitar o déficit calórico.</p>
+              <div class="gift-old">De R$ 197</div>
+              <div class="gift-row">
+                <span class="gift-tag">Presente</span>
+                <span class="gift-free">você leva gratuitamente</span>
+              </div>
             </div>
           </div>
           <div class="bonus-item animate">
-            <div class="bonus-icon"><i class="fas fa-dumbbell"></i></div>
+            <div class="bonus-mockup"><img src="assets/mockkups/protocolo-treinos.png" alt="Mockup do Protocolo de Treinos em Casa" /></div>
             <div class="bonus-info">
               <h4>Protocolo de Treinos em Casa</h4>
-              <p>Treinos de 20 a 30 minutos sem equipamento. Adaptados para cada fase do programa.</p>
-              <div class="val">Valor: R$ 147</div>
+              <p>Treinos de 20 a 30 minutos para ativar metabolismo e queima de gordura mesmo com rotina corrida.</p>
+              <div class="gift-old">De R$ 147</div>
+              <div class="gift-row">
+                <span class="gift-tag">Presente</span>
+                <span class="gift-free">você leva gratuitamente</span>
+              </div>
             </div>
           </div>
           <div class="bonus-item animate">
-            <div class="bonus-icon"><i class="fas fa-users"></i></div>
+            <div class="bonus-mockup"><img src="assets/mockkups/guia-anti-ansiedade.png" alt="Mockup do Guia Anti-Ansiedade Alimentar" /></div>
+            <div class="bonus-info">
+              <h4>Guia Anti-Ansiedade Alimentar</h4>
+              <p>Estratégias práticas para controlar compulsão emocional e manter consistência sem sofrimento.</p>
+              <div class="gift-old">De R$ 97</div>
+              <div class="gift-row">
+                <span class="gift-tag">Presente</span>
+                <span class="gift-free">você leva gratuitamente</span>
+              </div>
+            </div>
+          </div>
+          <div class="bonus-item animate">
+            <div class="bonus-mockup"><img src="assets/mockkups/comunidade-exclusiva.png" alt="Mockup da Comunidade Exclusiva" /></div>
             <div class="bonus-info">
               <h4>Comunidade Exclusiva no WhatsApp</h4>
-              <p>Grupo privado com todas as alunas ativas + suporte da equipe Live Coach 6 dias por semana.</p>
-              <div class="val">Valor: R$ 97</div>
-            </div>
-          </div>
-          <div class="bonus-item animate">
-            <div class="bonus-icon"><i class="fas fa-gift"></i></div>
-            <div class="bonus-info">
-              <h4>🎁 BÔNUS: Guia Anti-Ansiedade Alimentar</h4>
-              <p>Técnicas práticas para parar a compulsão em até 3 minutos. Funciona mesmo à noite.</p>
-              <div class="val">Valor: R$ 97 GRÁTIS</div>
+              <p>Acompanhamento coletivo e suporte da equipe Live Coach 6 dias por semana para manter você em ação.</p>
+              <div class="gift-old">De R$ 97</div>
+              <div class="gift-row">
+                <span class="gift-tag">Presente</span>
+                <span class="gift-free">você leva gratuitamente</span>
+              </div>
             </div>
           </div>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 24px;">
-          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px; animate" class="animate">
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px;" class="animate">
             <div style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 16px;">Resumo do valor total</div>
             <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
               <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.65);">
-                <span>Programa Completo</span><span style="color: #fff; font-weight: 600;">R$ 497</span>
+                <span>Cardápio Personalizado</span><span style="color: #ff5a5a; font-weight: 700; text-decoration: line-through;">R$ 197</span>
               </div>
               <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.65);">
-                <span>Cardápio Personalizado</span><span style="color: #fff; font-weight: 600;">R$ 197</span>
+                <span>Protocolo de Treinos</span><span style="color: #ff5a5a; font-weight: 700; text-decoration: line-through;">R$ 147</span>
               </div>
               <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.65);">
-                <span>Protocolo de Treinos</span><span style="color: #fff; font-weight: 600;">R$ 147</span>
+                <span>Comunidade Exclusiva</span><span style="color: #ff5a5a; font-weight: 700; text-decoration: line-through;">R$ 97</span>
               </div>
               <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.65);">
-                <span>Comunidade Exclusiva</span><span style="color: #fff; font-weight: 600;">R$ 97</span>
-              </div>
-              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.65);">
-                <span>Bônus: Guia Anti-Ansiedade</span><span style="color: var(--green); font-weight: 600;">GRÁTIS</span>
+                <span>Bônus: Guia Anti-Ansiedade</span><span style="color: #ff5a5a; font-weight: 700; text-decoration: line-through;">R$ 97</span>
               </div>
               <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
-                <span>Valor total</span><span style="text-decoration: line-through;">R$ 1.035</span>
+                <span>Valor total dos presentes</span><span style="color:#ff5a5a; text-decoration: line-through; font-weight:700;">R$ 538</span>
               </div>
             </div>
             <div style="text-align: center;">
-              <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 4px;">Hoje por apenas</div>
-              <div style="font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 900; color: var(--green); line-height: 1;">R$ 197</div>
-              <div style="font-size: 0.82rem; color: rgba(255,255,255,0.55); margin-bottom: 20px;">ou 12× de R$ 18,99</div>
+              <div style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 4px; font-weight: 600;">Você recebe tudo isso hoje</div>
+              <div style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--green); line-height: 1;">100% grátis</div>
+              <div style="font-size: 0.82rem; color: rgba(255,255,255,0.55); margin-bottom: 20px;">Esses bônus acompanham sua inscrição no método principal</div>
               <a href="#preco" class="btn-cta" style="width: 100%; justify-content: center;">
                 <i class="fas fa-lock"></i>
                 Garantir com desconto
@@ -1561,17 +1603,29 @@
         <p style="color: var(--gray); font-size: 1rem; max-width: 480px; margin: 0 auto;">
           Sem mensalidade. Sem renovação automática. Acesso vitalício por um valor único.
         </p>
+        <div class="promo-timer">
+          <i class="fas fa-clock"></i> Promoção encerra em <b id="promo-countdown">00:00</b>
+        </div>
       </div>
 
       <div class="price-box animate">
-        <div class="price-name">Live Coach Programa Completo</div>
+        <div class="price-name">Produto principal: Live Coach 30 Dias</div>
+        <ul class="price-features">
+          <li><i class="fas fa-check-circle"></i> Programa principal de 30 dias com resultado rápido (60+ videoaulas)</li>
+          <li><i class="fas fa-gift"></i> Presente: Cardápio Personalizado por Ciclo <span class="gift-old">R$ 197</span> <span class="gift-free">você leva gratuitamente</span></li>
+          <li><i class="fas fa-gift"></i> Presente: Protocolo de Treinos em Casa <span class="gift-old">R$ 147</span> <span class="gift-free">você leva gratuitamente</span></li>
+          <li><i class="fas fa-gift"></i> Presente: Comunidade Exclusiva no WhatsApp <span class="gift-old">R$ 97</span> <span class="gift-free">você leva gratuitamente</span></li>
+          <li><i class="fas fa-gift"></i> Presente: Guia Anti-Ansiedade Alimentar <span class="gift-old">R$ 97</span> <span class="gift-free">você leva gratuitamente</span></li>
+          <li><i class="fas fa-check-circle"></i> Suporte da equipe 6 dias por semana para tirar dúvidas</li>
+          <li><i class="fas fa-check-circle"></i> Acesso vitalício (sem prazo de expiração)</li>
+        </ul>
         <div class="price-old">De R$ 1.035,00</div>
-        <div class="price-current"><sup>R$</sup>197</div>
+        <div class="price-current"><sup>R$</sup>97</div>
         <div class="price-installments">
-          ou <strong>12× de R$ 18,99</strong> no cartão
+          ou <strong>12× de R$ 9,74</strong> no cartão
         </div>
 
-        <a href="#" class="btn-cta" style="width: 100%; justify-content: center; font-size: 1.05rem;">
+        <a href="https://pay.hotmart.com/S105226729F?checkoutMode=10" class="btn-cta" style="width: 100%; justify-content: center; font-size: 1.05rem;">
           <i class="fas fa-shopping-cart"></i>
           Quero começar minha transformação
         </a>
@@ -1580,18 +1634,8 @@
           Pagamento 100% seguro · Processado por Stripe / Hotmart
         </span>
 
-        <ul class="price-features">
-          <li><i class="fas fa-check-circle"></i> Programa Completo de 12 semanas (60+ videoaulas)</li>
-          <li><i class="fas fa-check-circle"></i> Cardápio Personalizado por Ciclo Hormonal</li>
-          <li><i class="fas fa-check-circle"></i> Protocolo de Treinos em Casa (sem equipamentos)</li>
-          <li><i class="fas fa-check-circle"></i> Comunidade Exclusiva no WhatsApp</li>
-          <li><i class="fas fa-check-circle"></i> Suporte da equipe 6 dias por semana</li>
-          <li><i class="fas fa-check-circle"></i> Acesso vitalício (sem prazo de expiração)</li>
-          <li><i class="fas fa-check-circle"></i> 🎁 Bônus: Guia Anti-Ansiedade Alimentar (GRÁTIS)</li>
-        </ul>
-
         <div class="price-guarantee">
-          <i class="fas fa-shield-alt"></i>
+          <img src="assets/7diasgarantia.png" alt="Selo de garantia incondicional de 7 dias" />
           <p><strong>Garantia incondicional de 7 dias.</strong> Se por qualquer motivo você não ficar satisfeita, devolvemos 100% do seu dinheiro. Sem burocracia, sem perguntas.</p>
         </div>
       </div>
@@ -1697,7 +1741,7 @@
         <p>
           Você já tentou força de vontade. Já tentou dieta. Já tentou academia. Agora é a hora de tentar o que realmente funciona.
         </p>
-        <a href="#preco" class="btn-cta" style="font-size: 1.1rem; padding: 20px 48px;">
+        <a href="https://pay.hotmart.com/S105226729F?checkoutMode=10" class="btn-cta" style="font-size: 1.1rem; padding: 20px 48px;">
           <i class="fas fa-heart"></i>
           Quero minha transformação agora
         </a>
@@ -1713,7 +1757,9 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <div class="f-logo">Live<span>Coach</span></div>
+        <div class="f-logo">
+          <img src="logo.png" alt="Live Coach" />
+        </div>
         <div class="f-links">
           <a href="#">Política de Privacidade</a>
           <a href="#">Termos de Uso</a>
@@ -1726,7 +1772,7 @@
 
   <!-- ─── FLOATING CTA ─── -->
   <div id="floating-cta">
-    <a href="#preco"><i class="fas fa-lock"></i> Garantir acesso agora</a>
+    <a href="https://pay.hotmart.com/S105226729F?checkoutMode=10"><i class="fas fa-lock"></i> Garantir acesso agora</a>
   </div>
 
   <!-- ─── SCRIPTS ─── -->
@@ -1774,6 +1820,21 @@
         el.textContent = Math.floor(start).toLocaleString('pt-BR') + suffix;
       }, 16);
     }
+
+    /* ── Promo timer aleatório ── */
+    (function () {
+      const timerEl = document.getElementById('promo-countdown');
+      if (!timerEl) return;
+      let totalSeconds = (Math.floor(Math.random() * 17) + 8) * 60 + (Math.floor(Math.random() * 40) + 10);
+      const tick = () => {
+        const m = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+        const s = String(totalSeconds % 60).padStart(2, '0');
+        timerEl.textContent = `${m}:${s}`;
+        totalSeconds = totalSeconds > 0 ? totalSeconds - 1 : 0;
+      };
+      tick();
+      setInterval(tick, 1000);
+    })();
 
     /* ── Topbar hide on scroll up, show on scroll down ── */
     let lastScroll = 0;
