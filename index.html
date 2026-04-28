@@ -557,6 +557,43 @@
     }
     #autoridade .cred-item i { color: var(--green); }
 
+    /* ─── DEPOIMENTOS (PRINTS) ─── */
+    #depoimentos-prints {
+      background: #fff;
+    }
+    #depoimentos-prints .dep-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 34px;
+    }
+    #depoimentos-prints .dep-header h2 {
+      font-size: clamp(1.8rem, 3.6vw, 2.5rem);
+      font-weight: 900;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+    #depoimentos-prints .dep-header p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+    #depoimentos-prints .dep-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    #depoimentos-prints .dep-card {
+      background: #f7f9f8;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    #depoimentos-prints .dep-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     /* ─── ANTES E DEPOIS — CARROSSEL ─── */
     #antes-depois {
       background: #0a0a0a;
@@ -1040,6 +1077,7 @@
       #pilares .pilares-grid { grid-template-columns: 1fr; }
       #autoridade .auth-grid { grid-template-columns: 1fr; }
       #autoridade .auth-photo { max-width: 320px; margin: 0 auto; }
+      #depoimentos-prints .dep-grid { grid-template-columns: 1fr; }
       #antes-depois .ad-grid { grid-template-columns: repeat(2, 1fr); }
       #oferta .oferta-grid { grid-template-columns: 1fr; }
       #oferta .bonus-list { grid-template-columns: 1fr; }
@@ -1472,7 +1510,7 @@
         </div>
         <div class="auth-info animate">
           <h2>Conheça a especialista<br /><em style="font-style:normal; color: var(--green);">por trás do método</em></h2>
-          <p class="subtitle">Nutricionista Esportiva · Coach de Emagrecimento Feminino</p>
+          <p class="subtitle">Especialista em Nutrição Esportiva · Coach de Emagrecimento Feminino</p>
           <p>
             Ao longo de mais de 8 anos atendendo mulheres com dificuldade para emagrecer, percebi que o problema nunca era a falta de esforço. Era a ausência de um método que entendesse o corpo, a mente e a rotina feminina de forma integrada.
           </p>
@@ -1488,6 +1526,30 @@
             <div class="cred-item"><i class="fas fa-heart"></i> Saúde Hormonal Feminina</div>
             <div class="cred-item"><i class="fas fa-award"></i> +4500 casos</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       6. DEPOIMENTOS (PRINTS)
+  ═══════════════════════════════════════ -->
+  <section id="depoimentos-prints" class="section">
+    <div class="container">
+      <div class="dep-header animate">
+        <div class="tag">Carinho real das alunas</div>
+        <h2>Resultados que viram mensagens de gratidão</h2>
+        <p>Esses prints mostram o cuidado da especialista e a transformação de mulheres reais no método Live Coach.</p>
+      </div>
+      <div class="dep-grid">
+        <div class="dep-card animate">
+          <img src="assets/depoimentos/1d1ffdcb-65c6-49f0-9296-de0f0279f5ab.jfif" alt="Print de depoimento de aluna com resultado no método Live Coach" />
+        </div>
+        <div class="dep-card animate">
+          <img src="assets/depoimentos/a3c254c5-8a47-48ca-955e-4c5d8af509bc.jfif" alt="Print de depoimento de aluna agradecendo o acompanhamento da especialista" />
+        </div>
+        <div class="dep-card animate">
+          <img src="assets/depoimentos/96afae7c-0c9b-439a-9790-d09dc2c0872e.jfif" alt="Print de depoimento de aluna mostrando evolução com o programa" />
         </div>
       </div>
     </div>
